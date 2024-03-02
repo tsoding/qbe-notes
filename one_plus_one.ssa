@@ -1,0 +1,12 @@
+function w $add(w %a, w %b) {
+@start
+    %c =w add %a, %b
+    ret %c
+}
+export function w $main() {
+@start
+    %r =w call $add(w 1, w 1)
+    call $printf(l $fmt, ..., w %r)
+    ret 0
+}
+data $fmt = { b "One and one make %d!\n", b 0 }
